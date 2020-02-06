@@ -1,0 +1,6 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <button mat-button class="change-temp-type" (click)="tempChanged($event)" [@zoomIn]=currentState #toggleButton>
+    {{tempType == 1 ? "°C" : "°F"}}
+  </button>
+</div>
+

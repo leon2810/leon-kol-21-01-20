@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\autocomplete",
+    "\\src\\app\\components\\temperature-toggle",
+    "\\src\\app\\home\\current-weather",
+    "\\src\\environments"
+  ],
+  "PreviewInSolutionExplorer": false
+}

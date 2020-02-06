@@ -1,0 +1,10 @@
+<div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center">
+  <ng-container *ngFor="let favLocation of (favoritesWeather$ | async)">
+    <mat-card fxFlex="0 1 auto" (click)="setCurrentLocation(favLocation.location)" fxLayout="column" fxLayoutAlign="center center" class="favorite-item">
+      <h3>{{favLocation.location.name}}</h3>
+      <h3>{{favLocation.weather.text}}</h3>
+      <img [src]="getImage(favLocation.weather.image)" alt="weather-image" />
+      <h5>{{favLocation.weather.temp | tempereture | async}}°</h5>
+    </mat-card>
+  </ng-container>
+</div>

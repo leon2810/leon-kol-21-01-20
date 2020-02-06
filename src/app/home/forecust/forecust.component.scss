@@ -1,0 +1,46 @@
+.forcust-item {
+  transition: all .2s ease-in-out;
+}
+
+.forcust-item :hover {
+  transform: scale(1.1);
+}
+
+.forcust-item__temperature {
+  display: flex;
+}
+
+.forcust-item__temperature--low {
+  color: dimgrey;
+}
+
+.forecust {
+  place-content: stretch space-between;
+  align-items: stretch;
+  display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .forecust {
+    flex-direction: column;
+  }
+
+  .forcust-item {
+    margin-bottom: 1em;
+  }
+
+  .forcust-item__temperature {
+    justify-content: center;
+    margin: 0.2em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .forecust {
+    flex-direction: row;
+  }
+
+  .forcust-item__temperature {
+    justify-content: space-evenly;
+  }
+}

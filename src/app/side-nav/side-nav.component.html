@@ -1,0 +1,15 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="opened" >
+    <mat-nav-list fxLayout="column" fxLayoutAlign="center strech">
+      <a fxLayout="row" fxLayoutAlign=" center" [routerLink]='["/"]' fxFlex="50" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }' (click)="sidenav.toggle()">
+        <mat-icon>home</mat-icon><span class="nav-caption">Home</span>
+      </a>
+      <a fxLayout="row" fxLayoutAlign=" center" [routerLink]='["/favorites"]' fxFlex="50" [routerLinkActive]='["link-active"]' (click)="sidenav.toggle()">
+        <mat-icon>favorite</mat-icon> <span class="nav-caption">Favorites</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,18 @@
+mat-grid-list {
+  padding: 0 !important;
+}
+
+.favorite-location {
+  color: red;
+}
+
+.current-weather__title {
+  font-size: 2vw;
+}
+
+@media (min-width: 1000px) {
+  .current-weather__title {
+    font-size: 20px;
+  }
+}
+

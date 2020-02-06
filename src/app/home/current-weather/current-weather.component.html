@@ -1,0 +1,17 @@
+  <div fxLayout="row" fxLayoutAlign="space-between flex-start">
+    <mat-grid-list cols="2" rowHeight="4:1" [style.width]="'11em'">
+      <mat-grid-tile [rowspan]="2">
+        <img [src]="getImage((currentWeather$ | async).image)" />
+      </mat-grid-tile>
+      <mat-grid-tile><h3 class="current-weather__title">{{(currentLocation$ | async).name}}</h3></mat-grid-tile>
+      <mat-grid-tile [rowspan]="1">
+        <h5>{{(currentWeather$ | async).temp | tempereture | async}}°</h5>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <button mat-button (click)="AddToFavorites()">
+      <mat-icon aria-hidden="false" aria-label="favorite"  [class.favorite-location]="isFavorite$ | async">favorite</mat-icon>
+    </button>
+  </div>
+<div fxLayout="row" fxLayoutAlign="center start">
+  <h1 fxLayoutAlign="center start">{{(currentWeather$ | async).text}}</h1>
+</div>

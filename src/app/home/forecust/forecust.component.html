@@ -1,0 +1,10 @@
+<div class="forecust">
+  <div *ngFor="let singleDay of (forecust$ | async)" fxLayout="column" class="forcust-item">
+    <span fxLayoutAlign="center">{{ singleDay.date | date:"EEEE" }}</span>
+    <span fxLayoutAlign="center"><img [src]="singleDay.image" alt="weather-image" /></span>
+    <div fxLayout="row" class="forcust-item__temperature">
+      <span class="forcust-item__temperature forcust-item__temperature--low">{{singleDay.minTemp | tempereture | async | number: "1.0-0" }}°</span>
+      <span class="forcust-item__temperature ">{{ singleDay.maxTemp | tempereture | async | number: "1.0-0" }}°</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+@import 'src/shared/variables.scss';
+@import 'app/nav-menu/nav-menu.component.scss-theme.scss';
+
+@include mat-core();
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}
+
+
+.regular-theme {
+  @include angular-material-theme($candy-app-theme);
+}
+
+@include nav-menu($dark-theme);
+@include nav-menu($candy-app-theme);
+
+
+
+
+
+
+

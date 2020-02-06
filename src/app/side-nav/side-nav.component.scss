@@ -1,0 +1,26 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 90vh;
+}
+
+mat-sidenav {
+  width: 10em;
+}
+
+main {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, a:active {
+  color: lightgray;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 6px;
+  font-size: medium;
+}
