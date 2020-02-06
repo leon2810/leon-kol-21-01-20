@@ -5,7 +5,7 @@
   <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
     <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
     <mat-option *ngIf="isLoading" class="is-loading">
-      טעינה...
+      Loading...
     </mat-option>
     <ng-container *ngIf="!isLoading">
       <mat-option *ngFor="let option of filteredItems" [value]="option.key" (onSelectionChange)="optionSelectionChange(option, $event)">

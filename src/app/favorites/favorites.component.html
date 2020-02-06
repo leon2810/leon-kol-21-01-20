@@ -4,7 +4,7 @@
       <h3>{{favLocation.location.name}}</h3>
       <h3>{{favLocation.weather.text}}</h3>
       <img [src]="getImage(favLocation.weather.image)" alt="weather-image" />
-      <h5>{{favLocation.weather.temp | tempereture | async}}°</h5>
+      <h5>{{favLocation.weather.temp | tempereture | async  | number: "1.0-0"}}°</h5>
     </mat-card>
   </ng-container>
 </div>

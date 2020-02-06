@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, EventEmitter, Output, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { BehaviorSubject, of, throwError } from 'rxjs';
 import { debounceTime, tap, switchMap, finalize, catchError } from 'rxjs/operators';
 import { MatAutocomplete, MatAutocompleteTrigger, MatOptionSelectionChange } from '@angular/material';
@@ -11,7 +11,7 @@ import { WeatherService } from '../../service/weather-service.service';
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss']
 })
-export class AutocompleteComponent implements OnInit {
+export class AutocompleteComponent implements OnInit,OnChanges  {
   lookupCtrl = new FormControl();
   filteredItems: any;
   isLoading = false;
@@ -33,6 +33,14 @@ export class AutocompleteComponent implements OnInit {
     }
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    debugger;
+    const currentItem: SimpleChange = changes.searchTerm;
+    if (currentItem.currentValue) {
+      this.searchTerm = changes.searchTerm.currentValue;
+      this.lookupCtrl.patchValue({ key: "", name: this.searchTerm })
+    }
+  }
 
   handleEmptyInput(event: any) {
     if (event.target.value === '') {

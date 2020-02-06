@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy  {
   ngOnInit(): void {
     this.currentWeather$= this.currentLocation$.pipe(switchMap(location => {
       if (location && location.key) {
-        this.cityToSearch = location.name;
+        this.updateSearchTitle(location.name)
         return this._weatherService.getCurrentWeather(location.key).pipe(tap(
           current => {
             this.updateLoadingStatus(false);
@@ -78,6 +78,11 @@ export class HomeComponent implements OnInit, OnDestroy  {
   updateLoadingStatus(status) {
     setTimeout(() => {
       this.isLoading = status;
+    });
+  }
+  updateSearchTitle(search) {
+    setTimeout(() => {
+      this.cityToSearch = search;
     });
   }
 
